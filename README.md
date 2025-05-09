@@ -24,36 +24,23 @@ npm install
 composer install
 ```
 
-## Usage
-
-Basic usage instructions:
-
-```bash
-npm run build
-# and
-php artisan migrate
-# and
-php artisan horizon
-# and
-php artisan reverb:start --port=6001
-# and
-php artisan serve
-```
-
 ## Environment file setup
 
-You should also set the variable in order for the code to work properly:
+You should set the environment variable file .env in order for the code to work properly:
+Copy .env.example to .env
 
 ```bash
+APP_NAME="YoPrint Demo"
 APP_TIMEZONE=Asia/Kuala_Lumpur
 BROADCAST_CONNECTION=reverb
 QUEUE_CONNECTION=redis
 DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
 DB_DATABASE=yoprint_demo
 DB_USERNAME="Your DB username"
 DB_PASSWORD="Your DB password"
 REDIS_CLIENT=predis
-VITE_APP_NAME="${APP_NAME}"
 VITE_APP_ENV=local
 REVERB_HOST=127.0.0.1
 REVERB_PORT=6001
@@ -65,6 +52,24 @@ REVERB_SCHEME=http
 VITE_REVERB_HOST="${REVERB_HOST}"
 VITE_REVERB_PORT="${REVERB_PORT}"
 VITE_REVERB_SCHEME="${REVERB_SCHEME}"
+```
+
+## Usage
+
+Basic usage instructions:
+
+```bash
+npm run build
+# and
+php artisan key:generate
+# and
+php artisan migrate
+# and
+php artisan horizon
+# and
+php artisan reverb:start --port=6001
+# and
+php artisan serve
 ```
 
 ## Contributing
